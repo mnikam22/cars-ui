@@ -36,7 +36,7 @@ Profile:    http://themeforest.net/user/andreysokoltsov
 
 
 /* PLUGIN CSS */
-@import url('../assets/owl-carousel/owl.carousel.css');
-@import url('../assets/owl-carousel/owl.theme.css');
-@import url('../assets/bxslider/jquery.bxslider.css');
+@import url('owl.carousel.css');
+@import url('owl.theme.css');
+@import url('jquery.bxslider.css');
 
