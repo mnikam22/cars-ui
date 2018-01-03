@@ -4,7 +4,7 @@ import { CarsHeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [ CarsHeaderComponent ],
-  imports: [],
+  imports: [RouterModule],
   exports: [ CarsHeaderComponent ]
 })
 

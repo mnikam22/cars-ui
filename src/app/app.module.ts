@@ -4,10 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms'
 
 const appRoutes = [{
 		path :'cars',
 		loadChildren: './modules/cars/cars.module#CarsModule'
+  },
+  {
+		path :'dealer',
+		loadChildren: './modules/dealer/dealer.module#DealerModule'
 	}];
 
 @NgModule({
@@ -17,9 +22,10 @@ const appRoutes = [{
   imports: [
   	RouterModule.forRoot(appRoutes),
     BrowserModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
-  exports: [ SharedModule ],
+  exports: [ SharedModule, FormsModule ],
   providers: [],
   bootstrap: [AppComponent]
 })
