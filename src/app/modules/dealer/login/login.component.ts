@@ -1,14 +1,15 @@
 import { Component , Renderer2, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router'
-
+import { Router } from '@angular/router';
+import { ConfigurationService } from '../../../shared/services/configs/configs.service';
+import { UserService } from '../../../shared/services/user/user.service';
 import { Http } from '@angular/http';
 import * as $ from 'jquery';
 declare var localStorage  : any;
 
-
 @Component({
   selector: '',
-  templateUrl: 'login.component.html'  
+  templateUrl: 'login.component.html' ,
+  providers:[ConfigurationService,UserService]
 })
 
 export class DealerLoginComponent {
@@ -17,8 +18,7 @@ export class DealerLoginComponent {
   dealer:any = {};
   loginMsg:any = false;
 
-  constructor(private renderer : Renderer2, private http: Http,private router : Router){
-  	//localStorage.setItem('dealer', 'test');
+  constructor(private renderer : Renderer2, private http: Http,private router : Router,private config : ConfigurationService, private userService : UserService ){  	
     //this.renderer.addClass(document.body, 'm-detail');
     /*$(document).ready(function(){
          console.log("okkkkkkk");
@@ -28,19 +28,20 @@ export class DealerLoginComponent {
   dealerLogin(data){
     data = data.value; 
     let self = this;
-    self.dealer = {      
+    self.dealer = {
       email : data.email,
-      password : data.password ,
-    }    
-    self.http.post("http://localhost:3000/dealer/login", self.dealer ).subscribe(response => {      
+      password : data.password,
+    }
+    self.http.post(self.config.getAPIUrl()+ "dealer/login", self.dealer ).subscribe(response => {      
       let loginData = response.json();      
       console.log(loginData, "loginData");
       if(!loginData.error){
       	self.loginMsg = {error: false, message:"Login Successfull. Redirecting to dashboard" };
       	localStorage.setItem('dealertoken', loginData.token);	
-      	localStorage.setItem('user' , {email : data.email});
+        localStorage.setItem('user' , JSON.stringify(loginData.user));
+        //self.userService.updateUser({"test": "This is test message"});
       	self.router.navigate(['/dealer/submit-car']);
-      } 
+      }
       else{
       	self.loginMsg.error = true;
       	self.loginMsg.message = loginData.message;

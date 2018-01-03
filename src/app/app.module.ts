@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './shared/services/auth/token.interceptor';
 
 const appRoutes = [{
 		path :'cars',
@@ -23,10 +24,17 @@ const appRoutes = [{
   	RouterModule.forRoot(appRoutes),
     BrowserModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [ SharedModule, FormsModule ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
