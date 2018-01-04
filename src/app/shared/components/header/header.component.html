@@ -15,10 +15,19 @@
 			</div>
 			<div class="col-md-6 col-xs-6">
 				<nav class="b-topBar__nav">
-					<ul>
+					<ul *ngIf="!loggedInUser || ( loggedInUser && !loggedInUser.email)">
 						<!-- <li><a href="#">Cart</a></li> -->
 						<li><a href="#" routerLink="/dealer/register">Register</a></li>
 						<li><a href="#" routerLink="/dealer/login">Login</a></li>
+					</ul>
+					<ul *ngIf="loggedInUser && loggedInUser.email">
+						<li>
+							<button style="padding: 0px 30px;background-color: transparent;border: transparent;text-transform: uppercase;color: red;" (click)="doLogout()"><b>Logout</b></button>
+						</li>
+						<li>
+							<a href="#" routerLink="/dealer/submit-car"><b>Dashboard</b></a>
+						</li>
+						
 					</ul>
 				</nav>
 			</div>

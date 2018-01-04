@@ -9,7 +9,7 @@ declare var localStorage  : any;
 @Component({
   selector: '',
   templateUrl: 'login.component.html' ,
-  providers:[ConfigurationService,UserService]
+  providers:[ConfigurationService]
 })
 
 export class DealerLoginComponent {
@@ -34,12 +34,11 @@ export class DealerLoginComponent {
     }
     self.http.post(self.config.getAPIUrl()+ "dealer/login", self.dealer ).subscribe(response => {      
       let loginData = response.json();      
-      console.log(loginData, "loginData");
       if(!loginData.error){
       	self.loginMsg = {error: false, message:"Login Successfull. Redirecting to dashboard" };
       	localStorage.setItem('dealertoken', loginData.token);	
         localStorage.setItem('user' , JSON.stringify(loginData.user));
-        //self.userService.updateUser({"test": "This is test message"});
+        self.userService.updateUser();
       	self.router.navigate(['/dealer/submit-car']);
       }
       else{

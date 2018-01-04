@@ -6,10 +6,11 @@ declare var localStorage : any;
 
 @Injectable()
 export class UserService {
-    private subject = new Subject<any>();
+    subject = new Subject<any>();
 
-    updateUser(message: string) {
+    updateUser() {
         let loggedInUser = localStorage.getItem("user");
+        console.log(loggedInUser, "loggedInUser");
         this.subject.next(loggedInUser);
     }
 
@@ -18,6 +19,7 @@ export class UserService {
     }
 
     getUpdatedUser(): Observable<any> {
+        console.log(this.subject, "this.subject");
         return this.subject.asObservable();
     }
 }
