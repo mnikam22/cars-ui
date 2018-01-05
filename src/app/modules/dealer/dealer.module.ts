@@ -7,6 +7,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';  
 import { DealerSubmitCarComponent } from './submit-car/submit-car.component';
+import { DealerDashboardComponent } from './dashboard/dashboard.component';
 
 var carsRoutes = [{
 		path :'',
@@ -29,7 +30,8 @@ var carsRoutes = [{
     DealerComponent,
     DealerSignupComponent,
     DealerLoginComponent,
-    DealerSubmitCarComponent
+	DealerSubmitCarComponent,
+	DealerDashboardComponent
   ],
   imports: [
 		FormsModule,
