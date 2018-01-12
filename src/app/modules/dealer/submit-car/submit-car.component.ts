@@ -27,7 +27,7 @@ export class DealerSubmitCarComponent implements OnDestroy {
   selectedModels:any = [];
   activeStep = 1 ;
   allmakes : Object = [];
-  loggedInUser = JSON.parse(localStorage.getItem('user'));
+  //loggedInUser = JSON.parse(localStorage.getItem('user'));
   carSuccess = false;
 
   constructor(private renderer : Renderer2, private http: HttpClient, private config: ConfigurationService){

@@ -6,19 +6,23 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/services/auth/token.interceptor';
+import { HomeComponent } from './modules/home/home.component';
 
 const appRoutes = [{
 		path :'cars',
 		loadChildren: './modules/cars/cars.module#CarsModule'
-  },
-  {
+  },{
 		path :'dealer',
 		loadChildren: './modules/dealer/dealer.module#DealerModule'
+	},{
+		path :'home',
+		component: HomeComponent
 	}];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
   	RouterModule.forRoot(appRoutes),

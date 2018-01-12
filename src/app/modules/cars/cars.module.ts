@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CarsComponent } from './cars.component';
 import { CarsListingComponent } from './listing/listing.component';
 import { CarsDetailsComponent } from  './details/details.component';
+import { UploadCarImageComponent } from './upload-image/upload-image.component';
 
 var carsRoutes = [{
 		path :'',
@@ -13,6 +14,10 @@ var carsRoutes = [{
 		{
 			path: 'details',
 			component: CarsDetailsComponent
+		},
+		{
+			path: 'upload-image',
+			component: UploadCarImageComponent
 		}
 	],
 		component : CarsComponent
@@ -21,7 +26,8 @@ var carsRoutes = [{
   declarations: [
     CarsComponent,
 		CarsListingComponent,
-		CarsDetailsComponent
+		CarsDetailsComponent,
+		UploadCarImageComponent
   ],
   imports: [
   	RouterModule.forChild(carsRoutes)

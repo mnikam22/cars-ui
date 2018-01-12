@@ -14,7 +14,8 @@ declare var localStorage  : any;
 
 export class CarsHeaderComponent implements OnInit {
   title = 'app';
-  loggedInUser = JSON.parse(localStorage.getItem('user'));
+  //loggedInUser = JSON.parse(localStorage.getItem('user'));
+  loggedInUser:any= {};
 
   constructor(private userService : UserService, private router : Router, private route: ActivatedRoute){
 
