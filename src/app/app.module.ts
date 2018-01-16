@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -15,7 +16,7 @@ const appRoutes = [{
 		path :'dealer',
 		loadChildren: './modules/dealer/dealer.module#DealerModule'
 	},{
-		path :'home',
+		path :'',
 		component: HomeComponent
 	}];
 
@@ -29,9 +30,10 @@ const appRoutes = [{
     BrowserModule,
     SharedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
-  exports: [ SharedModule, FormsModule ],
+  exports: [ SharedModule, FormsModule, CommonModule ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
