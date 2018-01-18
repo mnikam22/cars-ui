@@ -2,7 +2,26 @@
     <div id="carousel" class="slide carousel carousel-fade">
         <div class="carousel-inner">
             <div class="item active">
-                <img src="../../assets/images/slider/car_1.jpg" alt="sliderImg">
+                <img src="assets/images/slider/car1.jpeg" alt="sliderImg">
+                <div class="container">
+                    <div class="carousel-caption b-slider__info">
+                        <input type="text" name="searchCars" id="searchCars" placeholder="Search for car lease here" (input)="onSearchChange($event.target.value)">
+                        <div *ngIf="isSearchData" id="carsResults">
+                            <ul>
+                                <li *ngFor="let car of carsResults">
+                                    {{car.name}} - $ {{car.price}}
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <h3>Find your dream car</h3>
+                        <h2>MercedesBenz <br>CLS63 AMG</h2>
+                        <p>Model 2015 <span>$214,900</span></p>
+                        <a class="btn m-btn" href="detail.html">see details<span class="fa fa-angle-right"></span></a> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="item">
+                <img src="assets/images/slider/car2.png" alt="sliderImg">
                 <div class="container">
                     <div class="carousel-caption b-slider__info">
                         <h3>Find your dream car</h3>
@@ -11,18 +30,7 @@
                         <a class="btn m-btn" href="detail.html">see details<span class="fa fa-angle-right"></span></a>
                     </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="../../assets/images/slider/car_2.jpg" alt="sliderImg">
-                <div class="container">
-                    <div class="carousel-caption b-slider__info">
-                        <h3>Find your dream car</h3>
-                        <h2>MercedesBenz <br>CLS63 AMG</h2>
-                        <p>Model 2015 <span>$214,900</span></p>
-                        <a class="btn m-btn" href="detail.html">see details<span class="fa fa-angle-right"></span></a>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
         <a class="carousel-control right" href="#carousel" data-slide="next">
             <span class="fa fa-angle-right m-control-right"></span>

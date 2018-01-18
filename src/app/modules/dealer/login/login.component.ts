@@ -32,7 +32,7 @@ export class DealerLoginComponent {
       email : data.email,
       password : data.password,
     }
-    self.http.post(self.config.getAPIUrl()+ "dealer/login", self.dealer ).subscribe(response => {      
+    self.http.post(self.config.getAPIUrl()+ "dealer/login", self.dealer ).subscribe(response => {
       let loginData = response.json();      
       if(!loginData.error){
       	self.loginMsg = {error: false, message:"Login Successfull. Redirecting to dashboard" };
