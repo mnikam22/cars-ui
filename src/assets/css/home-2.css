@@ -27,7 +27,7 @@
 /* Search */
 .m-home .b-search__main{
     margin-top: 0;
-    height:320px;
+    height:120px;
 }
 
 .m-home .b-search .container > h1{
@@ -82,7 +82,7 @@
 .m-home .b-featured{
     padding-top: 65px;
     padding-bottom: 70px;
-    background: url(../images/backgrounds/featured.jpg);
+    background: url(../images/backgrounds/featured.png);
     background-size: cover;
 }
 

@@ -1,19 +1,22 @@
 import { Component , Renderer2, OnDestroy, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Http } from '@angular/http';
+import { ConfigurationService } from '../../shared/services/configs/configs.service';
+import { HttpClient } from '@angular/common/http';
 
 import * as $ from 'jquery';
 //import 'owlcarousel';
 
 @Component({
   selector: '',
-  templateUrl: 'home.component.html'  
+  templateUrl: 'home.component.html',
+  providers:[ConfigurationService]  
 })
 export class HomeComponent implements OnInit {
   title = 'app';
   carsResults = [];
   isSearchData = false ;
-  constructor(private renderer : Renderer2){
+  constructor(private renderer : Renderer2, private http: HttpClient, private config: ConfigurationService){
     //this.renderer.addClass(document.body, 'm-listingsTwo');
   }
 
@@ -26,20 +29,16 @@ export class HomeComponent implements OnInit {
   }
   onSearchChange(val){
     console.log(val, "val data");
+    let qry = encodeURI(val);
     let self = this;
-    self.isSearchData = true ;
-    self.carsResults = [{
-      name : "Honda clarity sedan",
-      price: 32444
-    },
-    {
-      name : "Honda Pilot SUV",
-      price: 45712
-    },
-    {
-      name : "Honda Civic",
-      price: 36584
-    }]
+    self.http.get(self.config.getAPIUrl()+'car/search/'+qry).subscribe(cars =>{
+        console.log(cars ,"cars");
+        self.isSearchData = true ;
+        self.carsResults = cars['data'];
+    }, error=>{ 
+        console.log(error, "Error in car search");
+    });
+   
   }
 
   ngOnDestroy(){

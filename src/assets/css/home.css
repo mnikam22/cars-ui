@@ -251,7 +251,7 @@ a.m-langLink{
    text-transform: uppercase;
    margin:0 0 0 20px;
    text-align: left;
-    top: 20%;
+    top: 35%;
 }
 
 .b-slider__info h3{
@@ -1625,7 +1625,7 @@ a.m-langLink{
 }
 
 .b-info__latest-article-info{
-    margin: 8px 0 0 99px;
+    /* margin: 8px 0 0 99px; */
     overflow: hidden;
 }
 
