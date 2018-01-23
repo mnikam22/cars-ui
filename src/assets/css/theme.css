@@ -497,7 +497,7 @@ h5.label-success, h5.label-danger{
 #searchCars{
     border: solid 2px #fff;
     background: #fff;
-    color: #fff;
+    color: #000;
     border-radius: 10px;
     padding: 10px;
     width: 100%;
@@ -527,7 +527,7 @@ h5.label-success, h5.label-danger{
 }
 
 
-.m-home .b-nav{
+.absolute-nav .b-nav{
     z-index: 100;
     position: absolute;
     background: transparent !important;

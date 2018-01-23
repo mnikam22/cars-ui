@@ -9,7 +9,7 @@
                         <div *ngIf="isSearchData" id="carsResults">
                             <ul>
                                 <li *ngFor="let car of carsResults">
-                                    {{car.name}}
+                                    <a href="" routerLink="cars/listing" [queryParams]="{ make: car.make_id }">{{car.name}}</a>
                                 </li>
                             </ul>
                         </div>

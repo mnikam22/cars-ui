@@ -10,6 +10,7 @@ import * as $ from 'jquery';
 @Component({
   selector: '',
   templateUrl: 'home.component.html',
+  styleUrls:['./home.component.css'], 
   providers:[ConfigurationService]  
 })
 export class HomeComponent implements OnInit {
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   carsResults = [];
   isSearchData = false ;
   constructor(private renderer : Renderer2, private http: HttpClient, private config: ConfigurationService){
-    //this.renderer.addClass(document.body, 'm-listingsTwo');
+    this.renderer.addClass(document.body, 'absolute-nav');
   }
 
   ngOnInit(){
@@ -42,6 +43,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    //this.renderer.removeClass(document.body, 'm-listingsTwo');
+    this.renderer.removeClass(document.body, 'absolute-nav');
   }
 }
