@@ -1,157 +1,134 @@
 <div class="b-items">	
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-sm-4 col-xs-12">
-                    <aside class="b-items__aside">
-                        <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">REFINE YOUR SEARCH</h2>
-                        <div class="b-items__aside-main wow zoomInUp" data-wow-delay="0.5s">
-                            <form>
-                                <div class="b-items__aside-main-body">
-                                    <div class="b-items__aside-main-body-item">
-                                        <label>SELECT A MAKE</label>
-                                        <div>
-                                            <select name="select1" class="m-select">
-                                                <option value="" selected="">Any Make</option>
-                                            </select>
-                                            <span class="fa fa-caret-down"></span>
-                                        </div>
-                                    </div>
-                                    <div class="b-items__aside-main-body-item">
-                                        <label>SELECT A MODEL</label>
-                                        <div>
-                                            <select name="select1" class="m-select">
-                                                <option value="" selected="">Any Make</option>
-                                            </select>
-                                            <span class="fa fa-caret-down"></span>
-                                        </div>
-                                    </div>
-                                    <div class="b-items__aside-main-body-item">
-                                        <label>PRICE RANGE</label>
-                                        <div class="slider"></div>
-                                        <input type="hidden" name="min" value="100" class="j-min" />
-                                        <input type="hidden" name="max" value="1000" class="j-max" />
-                                    </div>
-                                    <div class="b-items__aside-main-body-item">
-                                        <label>VEHICLE TYPE</label>
-                                        <div>
-                                            <select name="select1" class="m-select">
-                                                <option value="" selected="">Any Type</option>
-                                            </select>
-                                            <span class="fa fa-caret-down"></span>
-                                        </div>
-                                    </div>
-                                    <div class="b-items__aside-main-body-item">
-                                        <label>VEHICLE STATUS</label>
-                                        <div>
-                                            <select name="select1" class="m-select">
-                                                <option value="" selected="">Any Status</option>
-                                            </select>
-                                            <span class="fa fa-caret-down"></span>
-                                        </div>
-                                    </div>
-                                    <div class="b-items__aside-main-body-item">
-                                        <label>FUEL TYPE</label>
-                                        <div>
-                                            <select name="select1" class="m-select">
-                                                <option value="" selected="">All Fuel Types</option>
-                                            </select>
-                                            <span class="fa fa-caret-down"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <footer class="b-items__aside-main-footer">
-                                    <button type="submit" class="btn m-btn">FILTER VEHICLES<span class="fa fa-angle-right"></span></button><br />
-                                    <a href="">RESET ALL FILTERS</a>
-                                </footer>
-                            </form>
-                        </div>
-                        <div class="b-items__aside-sell wow zoomInUp" data-wow-delay="0.5s">
-                            <div class="b-items__aside-sell-img">
-                                <h3>SELL YOUR CAR</h3>
-                            </div>
-                            <div class="b-items__aside-sell-info">
-                                <p>
-                                    Nam tellus enimds eleifend dignis lsim
-                                    biben edum tristique sed metus fusce
-                                    Maecenas lobortis.
-                                </p>
-                                <a href="submit1.html" class="btn m-btn">REGISTER NOW<span class="fa fa-angle-right"></span></a>
-                            </div>
-                        </div>
-                    </aside>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-lg-12 col-md-12 text-right">
+                    <button class="btn m-btn m-readMore wow zoomInUp" (click)="openModal(template)"> REFINE YOUR SEARCH <span class="fa fa-angle-right"></span> </button>
                 </div>
-                <div class="col-lg-9 col-sm-8 col-xs-12">
-                    <div class="b-items__cars">
-                        <div *ngFor="let car of searchListings" class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s">
-                            <div class="b-items__cars-one-img">
-                                <img src="./assets/images/cars/{{car.model_id}}.jpg" alt='toyota'/>
-                                <span class="b-items__cars-one-img-type m-premium">PREMIUM</span>
-                            </div>
-                            <div class="b-items__cars-one-info">
-                                <form class="b-items__cars-one-info-header s-lineDownLeft">
-                                    <h2>{{car.name}}</h2>
-                                    <input type="checkbox" name="check1" id='check1'/>
-                                    <label for="check1" class="b-items__cars-one-img-check"><span class="fa fa-check"></span></label>
-                                </form>
-                                <div class="row s-noRightMargin">
-                                    <div class="col-md-9 col-xs-12">
-                                        <p>In a pickup market gone fancy, the Silverado sticks to its basic-truck recipe. The steering is accurate, and the Silverado</p>
-                                        <div class="m-width row m-smallPadding">
-                                            <div class="col-xs-6">
-                                                <div class="row m-smallPadding">
-                                                    <div class="col-xs-6">
-                                                        <span class="b-items__cars-one-info-title">Body Style:</span>
-                                                        <span class="b-items__cars-one-info-title">Mileage:</span>
-                                                        <span class="b-items__cars-one-info-title">Transmission:</span>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        <span class="b-items__cars-one-info-value">Sedan</span>
-                                                        <span class="b-items__cars-one-info-value">35,000 KM</span>
-                                                        <span class="b-items__cars-one-info-value">6-Speed Auto</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <div class="row m-smallPadding">
-                                                    <div class="col-xs-4">
-                                                        <span class="b-items__cars-one-info-title">Engine:</span>
-                                                        <span class="b-items__cars-one-info-title">Color:</span>
-                                                        <span class="b-items__cars-one-info-title">Specs:</span>
-                                                    </div>
-                                                    <div class="col-xs-8">
-                                                        <span class="b-items__cars-one-info-value">DOHC 24-valve V-6</span>
-                                                        <span class="b-items__cars-one-info-value">White</span>
-                                                        <span class="b-items__cars-one-info-value">2-Passenger, 2-Door</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+            </div>
+
+            <div class="row"> 
+                    <ng-template #template>                                
+                      <div class="modal-header">
+                        <h4 class="modal-title">REFINE SEARCH</h4>
+                        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body row refine_search">
+                            <div class="col-md-12 col-lg-12">
+                                    <div class="col-md-6">
+                                        <label>SELECT A MAKE</label>
+                                        <div class="relative">
+                                            <select name="select1" class="m-select" name="selectMake" [(ngModel)]="search.make" #selectMake="ngModel">
+                                                <option value="" selected="">Any Make</option>
+                                                <option *ngFor="let mk of allmakes" [value]="mk.make_id">{{mk.name}}</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xs-12">
-                                        <div class="b-items__cars-one-info-price">
-                                            <div class="pull-right">
-                                                <h3>Price:</h3>
-                                                <h4>$29,415</h4>
-                                            </div>
-                                            <a href="" routerLink="/cars/details"  class="btn m-btn">VIEW DETAILS<span class="fa fa-angle-right"></span></a>
+                                    <!-- <div class="col-md-6">
+                                        <label>SELECT A MODEL</label>
+                                        <div class="relative">
+                                            <select class="m-select" name="selectModels" [(ngModel)]="search.model">
+                                                    <option value="">Select</option>
+                                                    <option *ngFor="let md of selectedModels" [value]="md.name">{{md.name}}</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
                                         </div>
+                                    </div> -->
+
+                                    <div class="col-md-6">
+                                        <label>STATE</label>
+                                        <div class="relative">
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">Any State</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>YEAR</label>
+                                        <div class="relative">
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">Any Year</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <footer class="col-md-12 col-lg-12">
+                                    <div class="col-md-6 col-lg-6">
+                                        <button type="button" class="btn m-btn btn-info" (click)="doSearch()">FILTER VEHICLES<span class="fa fa-angle-right"></span></button>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <button type="button" class="btn m-btn btn-danger">RESET FILTERS<span class="fa fa-angle-right"></span></button>                                        
+                                    </div>
+                                </footer>
+                      </div>
+                    </ng-template>
+
+                    
+                <div class="col-lg-12 col-sm-8 col-xs-12" >                    
+                    <div class="col-lg-3 col-md-3 col-xs-12" *ngFor="let car of searchListings">
+                        <div class="b-items__cell wow zoomInUp" data-wow-delay="0.5s" style="height: 300px; visibility: visible; animation-delay: 0.5s; animation-name: zoomInUp;">
+                            <div class="b-items__cars-one-img">
+                                <img src="{{apiImageUrl}}{{car.image_original}}"/>
+                            </div>
+                            <div class="b-items__cell-info">
+                                <div class="s-lineDownLeft b-items__cell-info-title">
+                                    <h2 class="">{{car.name}}</h2>
+                                </div>                                
+                                <div class="row m-smallPadding">
+                                    <div class="col-xs-6">
+                                        
+                                        <h5 class="b-items__cell-info-price">$29,415</h5>
+                                    </div>
+                                    <div class="col-xs-6">                                        
+                                        <a href="#" routerLink="/cars/details" [queryParams]="{ model: car.model_id }" class="btn m-btn">VIEW DETAILS<span class="fa fa-angle-right"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
-                        <div class="b-items__pagination-main">
-                            <a href="#" class="m-left"><span class="fa fa-angle-left"></span></a>
-                            <span class="m-active"><a href="#">1</a></span>
-                            <span><a href="#">2</a></span>
-                            <span><a href="#">3</a></span>
-                            <span><a href="#">4</a></span>
-                            <a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>    
-                        </div>
-                    </div>
+                </div>
+                <div class="col-md-12 col-ld-12 text-right">
+                        <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
+                                <div class="b-items__pagination-main">
+                                    <a href="#" class="m-left"><span class="fa fa-angle-left"></span></a>
+                                    <span class="m-active"><a href="#">1</a></span>
+                                    <span><a href="#">2</a></span>
+                                    <span><a href="#">3</a></span>
+                                    <span><a href="#">4</a></span>
+                                    <a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>    
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>
     
 </div>
+
+
+<!-- Modal for refine search -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>

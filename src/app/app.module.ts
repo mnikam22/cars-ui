@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/services/auth/token.interceptor';
 import { HomeComponent } from './modules/home/home.component';
+import { ModalModule } from 'ngx-bootstrap';
 
 const appRoutes = [{
 		path :'cars',
@@ -31,7 +32,8 @@ const appRoutes = [{
     SharedModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    ModalModule.forRoot()
   ],
   exports: [ SharedModule, FormsModule, CommonModule ],
   providers: [

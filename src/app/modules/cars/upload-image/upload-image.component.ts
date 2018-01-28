@@ -59,7 +59,6 @@ export class UploadCarImageComponent implements OnDestroy {
   uploadImage(data){
     let self = this;
     //self.carSuccess = true;
-    console.log(data, "data after submit car");
     $.blockUI();
     self.http.post(self.config.getAPIUrl()+ "car/upload_model_image/"+data.value.selectModels,{image_url : data.value.image_url}).subscribe(result=>{
           $.unblockUI();

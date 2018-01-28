@@ -1,12 +1,10 @@
 import { Component , Renderer2, OnDestroy, AfterViewInit, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClient } from "@angular/common/http";
-
 import * as $ from 'jquery';
 import * as toastr from 'toastr';
 import 'block-ui';
 import { ConfigurationService } from '../../../shared/services/configs/configs.service';
-
 declare var localStorage : any;
 
 @Component({
@@ -27,11 +25,14 @@ export class DealerSubmitCarComponent implements OnDestroy {
   selectedModels:any = [];
   activeStep = 1 ;
   allmakes : Object = [];
-  //loggedInUser = JSON.parse(localStorage.getItem('user'));
+  loggedInUser: any = {};
   carSuccess = false;
 
   constructor(private renderer : Renderer2, private http: HttpClient, private config: ConfigurationService){
-  	this.renderer.addClass(document.body, 'm-submit1');
+    this.renderer.addClass(document.body, 'm-submit1');
+    if(localStorage.getItem('user')){
+      this.loggedInUser = JSON.parse(localStorage.getItem('user'));
+    }
   }
 
   nextTab(){
@@ -57,9 +58,32 @@ export class DealerSubmitCarComponent implements OnDestroy {
   }
 
   submitCar(data){
+    console.log(data , "data after submit car");
     let self = this;
+    data = data.value;
     //self.carSuccess = true;
-    console.log(data, "data after submit car");
+    let newListing : any  = {
+        model_id : data.model_id,
+        dealer_id : self.loggedInUser._id,
+        miles_per_year : data.milesPerYear,
+        make : data.leaseTerm,
+        money_down : data.leaseSigningDue,
+        color : data.carColor ? data.carColor : 'all',
+        vin_number: data.carVIN,
+        monthly_lease_price: data.leaseMonthlyPayment
+    };
+    
+    $.blockUI();
+    self.http.post(self.config.getAPIUrl()+ 'listing/new', newListing).subscribe(data=>{
+      console.log(data, "Listing saved") ;
+      $.unblockUI();
+      toastr.success('Car submitted successfully!!');
+    }, error=>{
+      $.unblockUI();
+      toastr.error("Error in submitting car");
+      console.log(error, "Error in saving listing");
+    })
+
   }
 
   selectDetails(attr,data){

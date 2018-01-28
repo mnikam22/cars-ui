@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     //$(".b-slider").owlCarousel();
   }
   onSearchChange(val){
-    console.log(val, "val data");
+    
     let qry = encodeURI(val);
     let self = this;
     self.http.get(self.config.getAPIUrl()+'car/search/'+qry).subscribe(cars =>{
