@@ -12,6 +12,7 @@ export class CarsDetailsComponent implements OnDestroy {
 
   title = 'app';
   carDetails:any = {};
+  apiImageUrl = this.config.getAPIUrl() + 'uploads/';
   constructor(private renderer : Renderer2, private route: ActivatedRoute, private router: Router, private http : HttpClient, private config : ConfigurationService){
     this.renderer.addClass(document.body, 'm-detail');
   }
@@ -28,7 +29,7 @@ export class CarsDetailsComponent implements OnDestroy {
       .queryParams
       .subscribe(params => {
         self.http.get(self.config.getAPIUrl()+ 'car/model/details/'+params.model ).subscribe(details=>{
-          console.log(details, "details");
+          self.carDetails = details ;
           //console.log(listings, "listings");          
         }, 
         error=>{

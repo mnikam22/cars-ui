@@ -94,7 +94,7 @@
 											<div class="s-relative">
 												<select class="m-select" name="selectModels" [(ngModel)]="car.model" (ngModelChange)="selectDetails('model')">
 													<option value="">Select</option>
-													<option *ngFor="let md of selectedModels" [value]="md.name">{{md.name}}</option>
+													<option *ngFor="let md of selectedModels" [value]="md.model_id">{{md.name}}</option>
 												</select>
 												<span class="fa fa-caret-down"></span>
 											</div>

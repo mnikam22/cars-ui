@@ -63,7 +63,7 @@ export class DealerSubmitCarComponent implements OnDestroy {
     data = data.value;
     //self.carSuccess = true;
     let newListing : any  = {
-        model_id : data.model_id,
+        model_id : data.selectModels,
         dealer_id : self.loggedInUser._id,
         miles_per_year : data.milesPerYear,
         make : data.leaseTerm,
@@ -72,7 +72,7 @@ export class DealerSubmitCarComponent implements OnDestroy {
         vin_number: data.carVIN,
         monthly_lease_price: data.leaseMonthlyPayment
     };
-    
+    console.log(newListing , "newListing");
     $.blockUI();
     self.http.post(self.config.getAPIUrl()+ 'listing/new', newListing).subscribe(data=>{
       console.log(data, "Listing saved") ;
