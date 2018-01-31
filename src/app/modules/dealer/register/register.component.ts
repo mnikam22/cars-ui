@@ -32,7 +32,9 @@ export class DealerSignupComponent {
       last_name : data.lastname,
       email : data.email,
       password : data.password,
-    }
+      businessname : data.businessname,
+      mobile_no : data.mobile_no      
+    }   
 
     self.http.post(self.config.getAPIUrl()+"dealer/signup", self.dealer ).subscribe(response => {
       self.signupsMsg = {error: false , message : "Dealer signup successfully"};
