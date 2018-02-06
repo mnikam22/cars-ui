@@ -144,14 +144,15 @@ a.m-langLink{
 
 /* Nav */
 .b-nav{
-    padding: 30px 0 25px 0;
+    /* padding: 30px 0 25px 0; */
 }
 
 .b-nav__logo{
-    float:left;
-    padding: 8px 0 0 5px;
-    background: url(../images/logo/logo.png) left top no-repeat;
+    /* float:left; */
+    /* padding: 8px 0 0 5px; 
+    background: url(../images/logo/logo.png) left top no-repeat;*/
     text-transform: uppercase;
+    height:100px;
 }
 
 .b-nav__logo h3{
@@ -182,7 +183,7 @@ a.m-langLink{
 }
 
 .b-nav__list ul{
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding-left: 0;
     margin-bottom: 0;
 }
@@ -211,7 +212,7 @@ a.m-langLink{
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
-    padding: 0 14px 15px 14px;
+    padding: 10px 14px;
     font:700 13px 'Open Sans',sans-serif;
 }
 

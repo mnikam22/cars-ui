@@ -58,8 +58,7 @@ export class CarsListingComponent implements OnDestroy {
       .queryParams
       .subscribe(params => {
         // Defaults to 0 if no query param provided.
-        self.http.get(self.config.getAPIUrl()+ 'car/makes/models_data/'+params.make+"/1/10" ).subscribe(listings=>{
-              console.log(listings, "listings");
+        self.http.get(self.config.getAPIUrl()+ 'car/makes/models_data/'+params.make+"/1/10" ).subscribe(listings=>{              
               self.searchListings = listings;
         }, 
         error=>{

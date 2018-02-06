@@ -1,46 +1,11 @@
-<!-- <header class="b-topBar">
-	<div class="container wow slideInDown" data-wow-delay="0.7s">
-		<div class="row">
-			<div class="col-md-4 col-xs-6">
-				<div class="b-topBar__addr">
-					<span class="fa fa-map-marker"></span>
-					202 W 7TH ST, LOS ANGELES, CA 90014
-				</div>
-			</div>
-			<div class="col-md-2 col-xs-6">
-				<div class="b-topBar__tel">
-					<span class="fa fa-phone"></span>
-					1-800- 624-5462
-				</div>
-			</div>
-			<div class="col-md-6 col-xs-6">
-				<nav class="b-topBar__nav">
-					<ul *ngIf="!loggedInUser || ( loggedInUser && !loggedInUser.email)">
-						<li><a href="#" routerLink="/dealer/register">Register</a></li>
-						<li><a href="#" routerLink="/dealer/login">Login</a></li>
-					</ul>
-					<ul *ngIf="loggedInUser && loggedInUser.email">
-						<li>
-							<button style="padding: 0px 30px;background-color: transparent;border: transparent;text-transform: uppercase;color: red;" (click)="doLogout()"><b>Logout</b></button>
-						</li>
-						<li>
-							<a href="#" routerLink="/dealer/submit-car"><b>Dashboard</b></a>
-						</li>
-						
-					</ul>
-				</nav>
-			</div>			
-		</div>
-	</div>
-</header> --><!--b-topBar-->
-
 <nav class="b-nav">
 	<div class="container">
-		<div class="row">
+		<div class="row nav_container">
 			<div class="col-sm-3 col-xs-4">
-				<div class="b-nav__logo wow slideInLeft" data-wow-delay="0.3s">
-					<h3><a  href="">Auto<span>Club</span></a></h3>
-					<h2><a  href="">AUTO DEALER TEMPLATE</a></h2>
+				<div class="b-nav__logo wow slideInLeft" data-wow-delay="0.3s"> &nbsp;
+					<a href="" routerLink="/"><img src="/assets/images/logo/logo.png"></a>
+					<!-- <h3><a  href="">Auto<span>Club</span></a></h3>
+					<h2><a  href="">AUTO DEALER TEMPLATE</a></h2> -->
 				</div>
 			</div>
 			<div class="col-sm-9 col-xs-8">
@@ -58,20 +23,39 @@
 							<li><a href="" routerLink="/">Home</a></li>
 							<li><a  href="">About</a></li>
 							<li><a  href="">Services</a></li>
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle='dropdown' href="#">Blog <span class="fa fa-caret-down"></span></a>
-								<ul class="dropdown-menu h-nav">
-									<li><a  href="">Blog 1</a></li>
-									<li><a  href="">Blog 2</a></li>
-									<li><a  href="">Page 404</a></li>
-								</ul>
-							</li>
+							<li><a  href="">Blog</a></li>							
 							<li><a href="" routerLink="/cars/listing">Cars</a></li>
 							<li><a  href="">Contact</a></li>
+
+							<!-- User login signup -->
+
+							<li *ngIf="!loggedInUser.first_name">
+								<a  href="" routerLink="/user/register" class="btn btn_transparent btn-info">Signup</a>
+							</li>
+							<li *ngIf="!loggedInUser.first_name">
+								<a  href="" routerLink="/user/login" class="btn btn_transparent btn-info">Login</a>
+							</li>
+							<li *ngIf="loggedInUser.first_name" class="dropdown" (mouseenter)="mouseEnter($event) "  (mouseleave) ="mouseLeave($event)">
+								<a class="dropdown-toggle" data-toggle='dropdown' href="#"> Hi , {{loggedInUser.first_name}} <span class="fa fa-caret-down"></span></a>
+								<ul class="dropdown-menu h-nav">
+									<li><a  href="" >Update Profile</a></li>
+									<li><a  href="" routerLink="/dealer/enquiries">Enquiries</a></li>									
+									<li><a  href="">Listings</a></li>
+									<li><a  href="">Add New Listing</a></li>
+								</ul>
+							</li>
+
 						</ul>
 					</div>
 				</div>
 			</div>
+			<!-- <div class="col-sm-2 col-md-2 text-right no-padding">
+				<div *ngIf="!loggedInUser">
+					<a  href="" routerLink="/user/register" class="btn btn_transparent btn-info">Signup</a> &nbsp;&nbsp;&nbsp;
+					<a  href="" routerLink="/user/login" class="btn btn_transparent btn-info">Login</a>
+				</div>
+				<button class="btn btn-info" *ngIf="loggedInUser" (click)="doLogout();">Logout</button>
+			</div> -->
 		</div>
 	</div>
 </nav><!--b-nav-->

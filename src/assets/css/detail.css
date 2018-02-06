@@ -423,3 +423,10 @@
     margin: 0 30px;
     display: inline-block;
 }
+
+
+
+.b-related .img-responsive {
+    height: 150px;
+    width:100%;
+}

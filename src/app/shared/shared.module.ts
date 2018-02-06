@@ -5,11 +5,13 @@ import { CarsHeaderComponent } from './components/header/header.component';
 import { CarsFooterComponent } from './components/footer/footer.component';
 import { UserService } from './services/user/user.service';
 
+import { HelperService } from './services/helper/helper.service';
+
 @NgModule({
   declarations: [ CarsHeaderComponent, CarsFooterComponent ],
   imports: [RouterModule,CommonModule],
   exports: [ CarsHeaderComponent, CarsFooterComponent ],
-  providers: [UserService]
+  providers: [UserService, HelperService]
 })
 
 export class SharedModule {  }

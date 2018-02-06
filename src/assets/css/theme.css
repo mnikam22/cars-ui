@@ -10,6 +10,9 @@
 -------------------------------------------------------------------*/
 
 /* Global */
+body{
+    font-family: 'Open Sans',sans-serif;
+}
 a:focus{
     outline:none;
 }
@@ -506,24 +509,33 @@ h5.label-success, h5.label-danger{
 }
 
 #carsResults{
-    padding: 10px;
+    padding: 0px;
     background-color: #fff;
+    border-radius: 14px;
+    max-height: 281px;
 }
 #carsResults ul, #carsResults ul li{
     list-style: none;
 }
 
 #carsResults ul li{
-    padding: 10px;
     color: #000;
+    text-indent: 10px;
 }
 
+#carsResults ul li a{
+    padding: 10px;
+    width :100%;
+    display: block;
+    text-shadow: none;
+    text-decoration: none;
+}
 #carsResults ul{
     padding-left: 0px;
 }
 
 #carsResults ul li:hover{
-    background-color: #ccc;
+    background-color: #e5e5e5;
 }
 
 
@@ -532,4 +544,18 @@ h5.label-success, h5.label-danger{
     position: absolute;
     background: transparent !important;
     width: 100%;
+}
+
+
+.btn_transparent{
+    color: #fff;
+    background-color: #000;
+    border: solid 2px #fff;
+    opacity: 0.6;
+    font-weight: bold;
+}
+
+
+.nav_container{
+    line-height: 100px;
 }

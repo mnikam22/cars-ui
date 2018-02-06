@@ -17,6 +17,9 @@ const appRoutes = [{
 		path :'dealer',
 		loadChildren: './modules/dealer/dealer.module#DealerModule'
 	},{
+		path :'user',
+		loadChildren: './modules/user/user.module#UserModule'
+	},{
 		path :'',
 		component: HomeComponent
 	}];

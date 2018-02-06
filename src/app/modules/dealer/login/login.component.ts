@@ -36,7 +36,7 @@ export class DealerLoginComponent {
       let loginData = response.json();      
       if(!loginData.error){
       	self.loginMsg = {error: false, message:"Login Successfull. Redirecting to dashboard" };
-      	localStorage.setItem('dealertoken', loginData.token);	
+      	localStorage.setItem('authtoken', loginData.token);	
         localStorage.setItem('user' , JSON.stringify(loginData.user));
         self.userService.updateUser();
       	self.router.navigate(['/dealer/submit-car']);
@@ -44,7 +44,7 @@ export class DealerLoginComponent {
       else{
       	self.loginMsg.error = true;
       	self.loginMsg.message = loginData.message;
-      	localStorage.setItem('dealertoken', false);
+      	localStorage.setItem('authtoken', false);
       }     
     },error=>{
       self.loginMsg = error.json() ;

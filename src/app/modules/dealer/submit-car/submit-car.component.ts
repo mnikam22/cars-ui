@@ -66,11 +66,11 @@ export class DealerSubmitCarComponent implements OnDestroy {
         model_id : data.selectModels,
         dealer_id : self.loggedInUser._id,
         miles_per_year : data.milesPerYear,
-        make : data.leaseTerm,
+        term_of_lease : data.leaseTerm,
         money_down : data.leaseSigningDue,
         color : data.carColor ? data.carColor : 'all',
-        vin_number: data.carVIN,
-        monthly_lease_price: data.leaseMonthlyPayment
+        vin_number: data.carVIN,        
+        monthly_lease_price: data.leaseMonthlyPayment        
     };
     console.log(newListing , "newListing");
     $.blockUI();

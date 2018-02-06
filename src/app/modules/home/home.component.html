@@ -6,10 +6,12 @@
                 <div class="container">
                     <div class="carousel-caption b-slider__info">
                         <input type="text" name="searchCars" id="searchCars" placeholder="Search for car lease here" (input)="onSearchChange($event.target.value)">
-                        <div *ngIf="isSearchData" id="carsResults">
+                        <div *ngIf="isSearchData && isSearchData == true" id="carsResults">
                             <ul>
                                 <li *ngFor="let car of carsResults">
-                                    <a href="" routerLink="cars/listing" [queryParams]="{ make: car.make_id }">{{car.name}}</a>
+                                    <a *ngIf="car.make_id && !car.model_id" href="" routerLink="cars/listing" [queryParams]="{ make: car.make_id }">{{car.name}}</a>
+                                    <a *ngIf="car.make_id && car.model_id" href="" routerLink="cars/details" [queryParams]="{ model: car.model_id }">{{car.name}}</a>
+
                                 </li>
                             </ul>
                         </div>

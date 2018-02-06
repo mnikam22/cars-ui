@@ -29,17 +29,20 @@ export class HomeComponent implements OnInit {
     //$(".b-slider").owlCarousel();
   }
   onSearchChange(val){
-    
-    let qry = encodeURI(val);
     let self = this;
-    self.http.get(self.config.getAPIUrl()+'car/search/'+qry).subscribe(cars =>{
-        console.log(cars ,"cars");
-        self.isSearchData = true ;
-        self.carsResults = cars['data'];
-    }, error=>{ 
-        console.log(error, "Error in car search");
-    });
-   
+    if(val == ''){
+      self.isSearchData = false ;
+    }
+    else{
+      let qry = encodeURI(val);      
+      self.http.get(self.config.getAPIUrl()+'car/search/'+qry).subscribe(cars =>{
+          console.log(cars ,"cars");
+          self.isSearchData = true ;
+          self.carsResults = cars['data'];
+      }, error=>{ 
+          console.log(error, "Error in car search");
+      });
+    }   
   }
 
   ngOnDestroy(){
