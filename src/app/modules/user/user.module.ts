@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UserLoginComponent } from './login/login.component';
 import { UpdateUserProfileComponent } from './profile/profile.component';
-
+import {UserDashboardComponent} from './dashboard/dashboard.component';
 var userRoutes = [{
 		path :'',
 		children:[{
@@ -29,7 +29,8 @@ var userRoutes = [{
         UserComponent,
 		UserSignupComponent,
 		UserLoginComponent,
-		UpdateUserProfileComponent
+		UpdateUserProfileComponent,
+		UserDashboardComponent
   ],
   imports: [
 		RouterModule.forChild(userRoutes),
