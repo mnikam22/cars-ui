@@ -11,28 +11,14 @@
                                 <li *ngFor="let car of carsResults">
                                     <a *ngIf="car.make_id && !car.model_id" href="" routerLink="cars/listing" [queryParams]="{ make: car.make_id }">{{car.name}}</a>
                                     <a *ngIf="car.make_id && car.model_id" href="" routerLink="cars/details" [queryParams]="{ model: car.model_id }">{{car.name}}</a>
-
                                 </li>
                             </ul>
                         </div>
-                        <!-- <h3>Find your dream car</h3>
-                        <h2>MercedesBenz <br>CLS63 AMG</h2>
-                        <p>Model 2015 <span>$214,900</span></p>
-                        <a class="btn m-btn" href="detail.html">see details<span class="fa fa-angle-right"></span></a> -->
+                        
                     </div>
                 </div>
             </div>
-            <!-- <div class="item">
-                <img src="assets/images/slider/car2.png" alt="sliderImg">
-                <div class="container">
-                    <div class="carousel-caption b-slider__info">
-                        <h3>Find your dream car</h3>
-                        <h2>MercedesBenz <br>CLS63 AMG</h2>
-                        <p>Model 2015 <span>$214,900</span></p>
-                        <a class="btn m-btn" href="detail.html">see details<span class="fa fa-angle-right"></span></a>
-                    </div>
-                </div>
-            </div> -->
+            
         </div>
         <a class="carousel-control right" href="#carousel" data-slide="next">
             <span class="fa fa-angle-right m-control-right"></span>
@@ -43,152 +29,88 @@
     </div>
 </section>
 
-
 <section class="b-search">
     <div class="container">
-        <h1 class="wow zoomInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInUp;">UNSURE WHICH VEHICLE YOU ARE LOOKING FOR? FIND IT HERE</h1>
-        <div class="b-search__main wow zoomInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInUp;">
-            <form action="listingsTwo.html" method="POST" class="b-search__main-form">
-                <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                        <div class="m-firstSelects">
-                            <div class="col-xs-3">
-                                <select name="select1">
-                                    <option value="0" selected="selected">Any Make</option>
-                                    <option value="1">Any Make</option>
-                                    <option value="2">Any Make</option>
-                                    <option value="3">Any Make</option>
-                                    <option value="4">Any Make</option>
-                                </select>
-                                <span class="fa fa-caret-down"></span>
-                                
-                            </div>
-                            <div class="col-xs-3">
-                                <select name="select2">
-                                    <option value="0" selected="selected">Any Model</option>
-                                    <option value="1">Any Model</option>
-                                    <option value="2">Any Model</option>
-                                    <option value="3">Any Model</option>
-                                </select>
-                                <span class="fa fa-caret-down"></span>
-                            </div>
-                            <div class="col-xs-2">
-                                <select name="select_model">
-                                    <option value="0" selected="selected">Any Year</option>
-                                    <option value="1">Any Model</option>
-                                    <option value="2">Any Model</option>
-                                    <option value="3">Any Model</option>
-                                </select>
-                                <span class="fa fa-caret-down"></span>
-                            </div>
-                            <div class="col-xs-2">
-                                <select name="select_year">
-                                    <option value="0" selected="selected">Any State</option>
-                                    <option value="1">Any Model</option>
-                                    <option value="2">Any Model</option>
-                                    <option value="3">Any Model</option>
-                                </select>
-                                <span class="fa fa-caret-down"></span>
-                            </div>
-                            <div class="col-xs-2 b-search__main-form-submit">
-                                <!-- <a href="#">Advanced search</a> -->
-                                <button type="submit" class="btn m-btn">Search<span class="fa fa-angle-right"></span></button> 
-                            </div>
-                            <!-- <div class="col-xs-4">
-                                <select name="select3">
-                                    <option value="1" selected="selected">Vehicle Status</option>
-                                    <option value="2">Vehicle Status 2</option>
-                                    <option value="3">Vehicle Status 3</option>
-                                    <option value="4">Vehicle Status 4</option>
-                                    <option value="5">Vehicle Status 5</option>
-                                </select>
-                                <span class="fa fa-caret-down"></span>
-                                <p>E.G:  NEW, USED, CERTIFIED</p>
-                            </div> -->
-                        </div>
-                        <!-- <div class="m-secondSelects">
-                            <div class="col-xs-4">
-                                <select name="select4">
-                                    <option value="0" selected="selected">Min Year</option>
-                                    <option value="1">Min Year</option>
-                                    <option value="2">Min Year</option>
-                                    <option value="3">Min Year</option>
-                                    <option value="4">Min Year</option>
-                                    <option value="5">Min Year</option>
-                                </select>
-                                <span class="fa fa-caret-down"></span>
-                            </div>
-                            <div class="col-xs-4">
-                                <select name="select5">
-                                    <option value="0" selected="selected">Max Year</option>
-                                    <option value="1">Max Year</option>
-                                    <option value="2">Max Year</option>
-                                    <option value="3">Max Year</option>
-                                    <option value="4">Max Year</option>
-                                </select>
-                                <span class="fa fa-caret-down"></span>
-                            </div>
+    <div class="b-search__main wow zoomInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInUp;">
+        <form action="listingsTwo.html" method="POST" class="b-search__main-form">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="m-firstSelects">
+                        <div class="col-xs-3">
+                            <select name="select1">
+                                <option value="0" selected="selected">Any Make</option>
+                                <option value="1">Any Make</option>
+                                <option value="2">Any Make</option>
+                                <option value="3">Any Make</option>
+                                <option value="4">Any Make</option>
+                            </select>
+                            <span class="fa fa-caret-down"></span>
                             
-                        </div> -->
-                    </div>
-                    <!-- <div class="col-md-4 col-xs-12 text-left s-noPadding">
-                        <div class="b-search__main-form-range">
-                            <label>PRICE RANGE</label>
-                            <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"><span class="min">100</span></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"><span class="max">1000</span></a></div>
-                            <input type="hidden" name="min" class="j-min" value="">
-                            <input type="hidden" name="max" class="j-max" value="">
                         </div>
-                        <div class="b-search__main-form-submit">
-                            <a href="#">Advanced search</a>
-                            <button type="submit" class="btn m-btn">Search the Vehicle<span class="fa fa-angle-right"></span></button> 
+                        <div class="col-xs-3">
+                            <select name="select2">
+                                <option value="0" selected="selected">Any Model</option>
+                                <option value="1">Any Model</option>
+                                <option value="2">Any Model</option>
+                                <option value="3">Any Model</option>
+                            </select>
+                            <span class="fa fa-caret-down"></span>
                         </div>
-                    </div> -->
-                </div>
-            </form>
-        </div>
+                        <div class="col-xs-2">
+                            <select name="select_model">
+                                <option value="0" selected="selected">Any Year</option>
+                                <option value="1">Any Model</option>
+                                <option value="2">Any Model</option>
+                                <option value="3">Any Model</option>
+                            </select>
+                            <span class="fa fa-caret-down"></span>
+                        </div>
+                        <div class="col-xs-2">
+                            <select name="select_year">
+                                <option value="0" selected="selected">Any State</option>
+                                <option value="1">Any Model</option>
+                                <option value="2">Any Model</option>
+                                <option value="3">Any Model</option>
+                            </select>
+                            <span class="fa fa-caret-down"></span>
+                        </div>
+                        <div class="col-xs-2 b-search__main-form-submit">
+                            <!-- <a href="#">Advanced search</a> -->
+                            <button type="submit" class="btn m-btn">Search<span class="fa fa-angle-right"></span></button> 
+                        </div>                               
+                    </div>                            
+                </div>                       
+            </div>
+        </form>
     </div>
+</div>
 </section>
 
-
-<!-- <section class="b-world">
+<section class="b-search hometabs">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <div class="b-world__item wow zoomInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInLeft;">
-                    <img class="img-responsive" src="media/370x200/wolks.jpg" alt="wolks">
-                    <div class="b-world__item-val">
-                        <span class="b-world__item-val-title">WE OFFER</span>
+        <h1 class="wow zoomInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInUp;">UNSURE WHICH VEHICLE YOU ARE LOOKING FOR? FIND IT HERE</h1>
+        <tabset>
+            <tab heading="Shop by make" id="tab1">
+                <div class="makeLogos row">
+                        <ng-container *ngFor="let make of allmakes">
+                    <div class="col-md-2" *ngIf="make.logo && make.logo != ''">
+                        <a href="#" routerLink="cars/listing" [queryParams]="{ make: make.make_id }"><img src="{{apiImageUrl}}{{make.logo}}"/></a>
                     </div>
-                    <h2>Low Prices, No Haggling</h2>
-                    <p>Curabitur libero. Donec facilisis velit eu est. Phasellus cons quat. Aenean vitae quam. Vivamus et nunc. Nunc consequ
-                        sem velde metus imperdiet lacinia.</p>
+                </ng-container>
                 </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="b-world__item wow zoomInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInUp;">
-                    <img class="img-responsive" src="media/370x200/mazda.jpg" alt="mazda">
-                    <div class="b-world__item-val">
-                        <span class="b-world__item-val-title">WE ARE THE</span>
-                    </div>
-                    <h2>Largest Car Dealership</h2>
-                    <p>Curabitur libero. Donec facilisis velit eu est. Phasellus cons quat. Aenean vitae quam. Vivamus et nunc. Nunc consequ
-                        sem velde metus imp         erdiet lacinia.</p>
-                </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="b-world__item wow zoomInRight" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInRight;">
-                    <img class="img-responsive" src="media/370x200/chevrolet.jpg" alt="chevrolet">
-                    <div class="b-world__item-val">
-                        <span class="b-world__item-val-title">OUR CUSTOMERS GET</span>
-                    </div>
-                    <h2>Multipoint Safety Check</h2>
-                    <p>Curabitur libero. Donec facilisis velit eu est. Phasellus cons quat. Aenean vitae quam. Vivamus et nunc. Nunc consequ
-                        sem velde metus imp         erdiet lacinia.</p>
-                </div>
-            </div>
-        </div>
+            </tab>
+            <tab heading="Shop By Style">
+                
+            </tab>
+             
+          </tabset>
+
+
+            
+            
+        
     </div>
-</section> -->
+</section>
 
 <section class="b-featured">
     <div class="container">

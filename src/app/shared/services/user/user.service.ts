@@ -10,7 +10,6 @@ export class UserService {
 
     updateUser() {
         let loggedInUser = localStorage.getItem("user");
-        console.log(loggedInUser, "loggedInUser");
         this.subject.next(loggedInUser);
     }
 
@@ -19,7 +18,6 @@ export class UserService {
     }
 
     getUpdatedUser(): Observable<any> {
-        console.log(this.subject, "this.subject");
         return this.subject.asObservable();
     }
 }

@@ -703,7 +703,6 @@ select.m-select + span.fa{
     text-align: left;
 }
 
-
 .refine_search .m-select{
     width: 100%;
     margin-bottom: 20px;
@@ -713,7 +712,6 @@ select.m-select + span.fa{
     position: relative;
 }
 
-
 .refine_search .btn-info {
     background-color: deepskyblue  !important;
     color:#fff;
@@ -722,4 +720,14 @@ select.m-select + span.fa{
 .refine_search .btn-danger {
     background-color :red !important;
     color:#fff;
+}
+
+#brandLogoBanner{
+    background-color : #f9f9f9;
+    padding: 10px;
+}
+
+#brandLogoBanner img{
+max-height: 200px;
+height: auto;
 }

@@ -6,6 +6,8 @@ import { CarsDetailsComponent } from  './details/details.component';
 import { UploadCarImageComponent } from './upload-image/upload-image.component';
 import { CommonModule } from '@angular/common';  
 import { FormsModule } from '@angular/forms';
+import { UploadMakeLogoComponent } from './upload-make-logo/upload-make-logo';
+
 
 var carsRoutes = [{
 		path :'',
@@ -20,6 +22,10 @@ var carsRoutes = [{
 		{
 			path: 'upload-image',
 			component: UploadCarImageComponent
+		},
+		{
+			path: 'upload-make-logo',
+			component : UploadMakeLogoComponent
 		}
 	],
 		component : CarsComponent
@@ -29,7 +35,8 @@ var carsRoutes = [{
     CarsComponent,
 		CarsListingComponent,
 		CarsDetailsComponent,
-		UploadCarImageComponent
+		UploadCarImageComponent,
+		UploadMakeLogoComponent
   ],
   imports: [
 		RouterModule.forChild(carsRoutes),

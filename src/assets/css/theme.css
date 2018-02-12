@@ -559,3 +559,35 @@ h5.label-success, h5.label-danger{
 .nav_container{
     line-height: 100px;
 }
+
+.hometabs .nav-tabs > li.active > a{
+    background-color: #00bff3;
+    color: #fff;
+}
+
+div.makeLogos a img{
+    height: 80px;
+    max-width: 100%;
+}
+
+
+div.makeLogos{
+ padding:16px 0px;
+ background-color: #fff;
+ margin: 0px;
+}
+
+
+div.makeLogos a{
+    display: block;
+    border: solid 1px #ccc;
+    padding: 2px;
+    border-radius: 7px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+div.makeLogos a:hover{
+    background-color: #ddd;
+}

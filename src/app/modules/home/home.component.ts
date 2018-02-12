@@ -17,12 +17,19 @@ export class HomeComponent implements OnInit {
   title = 'app';
   carsResults = [];
   isSearchData = false ;
+  allmakes:any = [];
+  apiImageUrl = this.config.getAPIUrl() + 'uploads/';
   constructor(private renderer : Renderer2, private http: HttpClient, private config: ConfigurationService){
     this.renderer.addClass(document.body, 'absolute-nav');
   }
 
   ngOnInit(){
-    	
+    let self = this;
+    self.http.get(self.config.getAPIUrl()+ "car/makes").subscribe(makes=>{
+        self.allmakes = makes;
+    },error=>{
+        console.log(error, "error occured");
+    })
   }
 
   ngAfterViewInit(){

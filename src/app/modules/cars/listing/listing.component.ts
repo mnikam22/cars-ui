@@ -14,8 +14,8 @@ import { CommonModule } from '@angular/common';
 export class CarsListingComponent implements OnDestroy {
   title = 'app';
   searchListings:any = [];
+  makeData:any = {};
   modalRef: BsModalRef;
-
   apiImageUrl = this.config.getAPIUrl() + 'uploads/';
   allmakes : Object = [];
   selectedModels:any = [];
@@ -49,11 +49,11 @@ export class CarsListingComponent implements OnDestroy {
 
   ngOnInit(){
     let self = this ;
-    self.http.get(self.config.getAPIUrl()+ "car/makes").subscribe(makes=>{
+    /* self.http.get(self.config.getAPIUrl()+ "car/makes").subscribe(makes=>{
       self.allmakes = makes;
     },error=>{
         console.log(error, "error occured");
-    })
+    }) */
     this.route
       .queryParams
       .subscribe(params => {
@@ -64,6 +64,14 @@ export class CarsListingComponent implements OnDestroy {
         error=>{
           console.log("error occured while getting listing");
         })
+
+        self.http.get(self.config.getAPIUrl()+ 'car/make/'+params.make).subscribe(makeData=>{
+          self.makeData = makeData;
+        }, 
+        error=>{
+          console.log("error occured while getting listing");
+        })
+
       });
   }
 
